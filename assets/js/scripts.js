@@ -23,7 +23,9 @@ $('document').ready(function () {
     });
 
     $('#price_min,#price_max,#num_baths,#num_beds').each(function () {
-      if (isNaN($(this).val() / 1) == true) {
+      var numbers_comma = /^[0-9,]*$/;
+
+      if (!numbers_comma.test($(this).val())) {
         var label = $("label[for='" + $(this).attr('id') + "']").text();
         $('#subtitle').after('<div class="alert alert-danger"><strong>Whoops!</strong> The value of ' + label + ' must be a number!</div>');
         validated = 0;
