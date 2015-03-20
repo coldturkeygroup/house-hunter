@@ -120,7 +120,7 @@ class HouseHunter {
 			'hierarchical'        => false,
 			'supports'            => [ 'title' ],
 			'menu_position'       => 5,
-			'menu_icon'           => 'dashicons-admin-home'
+			'menu_icon'           => 'dashicons-admin-crosshair'
 		];
 
 		register_post_type( $this->token, $args );
