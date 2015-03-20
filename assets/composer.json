@@ -1,0 +1,13 @@
+{
+  "name": "coldturkeygroup/buyerquiz",
+  "description": "Buyer Quiz Plugin for Platform",
+  "license": "proprietary",
+  "require": {
+    "guzzlehttp/guzzle": "~4.0"
+  },
+  "autoload": {
+    "classmap": [
+      "../classes"
+    ]
+  }
+}
