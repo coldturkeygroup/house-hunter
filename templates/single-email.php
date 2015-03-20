@@ -400,10 +400,12 @@ $message = '<!DOCTYPE html>
 								<tr>
 									<td align="center" valign="top" class="bodyContent" style="padding-top: 10px;padding-right: 30px;padding-bottom: 0px;padding-left: 30px;font-family: Verdana, Arial, Helvetica, sans-serif;text-align: left;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #3A3A3A;font-size: 16px;font-weight: normal;line-height: 169%;-webkit-font-smoothing: antialiased;">
                     <span class="notlook">
-                      <p><strong>Location: </strong>' . $subscriber->location . '</p>
-                      <p><strong>Price Range: </strong>$' . $subscriber->price_min . ' - $' . $subscriber->price_max . '</p>
-                      <p><strong># Bedrooms: </strong>' . $subscriber->num_beds . '</p>
-                      <p><strong># Bathrooms: </strong>' . $subscriber->num_baths . '</p>
+                      <p>
+                        <strong>Location: </strong>' . $subscriber->location . '<br>
+                        <strong>Price Range: </strong>$' . $subscriber->price_min . ' - $' . $subscriber->price_max . '<br>
+                        <strong># Bedrooms: </strong>' . $subscriber->num_beds . '<br>
+                        <strong># Bathrooms: </strong>' . $subscriber->num_baths . '
+                      </p>
                     </span>
 									</td>
 								</tr>
