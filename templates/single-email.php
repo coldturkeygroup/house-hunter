@@ -4,7 +4,7 @@ $message = '<!DOCTYPE html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>New Buyer Quiz Submission</title>
+	<title>New House Hunter Submission</title>
 	<style type="text/css">
 		#outlook a {
 			padding: 0;
@@ -206,7 +206,7 @@ $message = '<!DOCTYPE html>
 
 		@media only screen and (max-width: 480px) {
 			td[id=logoCell], td[id=bodyCell], td[id=headerCell], td[id=footerCell] {
-				padding: 0px 0 !important;
+				padding: 0 0 !important;
 			}
 
 		}
@@ -335,7 +335,7 @@ $message = '<!DOCTYPE html>
 
 <body style="background-color:#FFFFFF;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;margin:0;padding:0;height:100% ;width:100% ;">
 
-<span class="preheader" style="color:transparent;display:none ;visibility:hidden;opacity:0;height:0;width:0;">You have a new Buyer Quiz submission - here is their info:</span>
+<span class="preheader" style="color:transparent;display:none ;visibility:hidden;opacity:0;height:0;width:0;">You have a new House Hunter submission - here is their info:</span>
 
 <center>
 	<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="background-color:#FFFFFF;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;margin:0;padding:0;border-collapse:collapse ;height:100% ;width:100% ;">
@@ -359,7 +359,7 @@ $message = '<!DOCTYPE html>
 								<tr>
 									<td align="center" valign="top" style="padding-top: 0px;padding-bottom: 0px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
 										<h2 style="text-align:center;font-family:\'Helvetica Neue\',Helvetica, Arial, sans-serif;font-size:26px;font-weight:bold;line-height:138%;margin:0;padding:0;-webkit-font-smoothing:antialiased;color:#3A3A3A ;text-decoration:none ;">
-											New Buyer Quiz Submission
+											New House Hunter Submission
 										</h2>
 									</td>
 								</tr>
@@ -385,7 +385,7 @@ $message = '<!DOCTYPE html>
 								<tr>
 									<td align="center" valign="top" class="bodyContent" style="padding-top: 10px;padding-right: 30px;padding-bottom: 0px;padding-left: 30px;font-family: Verdana, Arial, Helvetica, sans-serif;text-align: left;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #3A3A3A;font-size: 16px;font-weight: normal;line-height: 169%;-webkit-font-smoothing: antialiased;">
                     <span class="notlook"><p>
-		                    <strong>Name:</strong> '. $subscriber->first_name . ' ' . $subscriber->last_name . '<br>
+		                    <strong>Name:</strong> '. $subscriber->first_name . '<br>
 		                    <strong>Email:</strong> ' . $subscriber->email . '
 	                    </p></span>
 									</td>
@@ -399,16 +399,12 @@ $message = '<!DOCTYPE html>
 								</tr>
 								<tr>
 									<td align="center" valign="top" class="bodyContent" style="padding-top: 10px;padding-right: 30px;padding-bottom: 0px;padding-left: 30px;font-family: Verdana, Arial, Helvetica, sans-serif;text-align: left;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #3A3A3A;font-size: 16px;font-weight: normal;line-height: 169%;-webkit-font-smoothing: antialiased;">
-                    <span class="notlook">';
-
-	                    foreach ( $responses as $response ) {
-		                    $message .= '<p>';
-		                    $message .= '<strong>' . $response['question'] . '</strong><br>';
-		                    $message .= $response['answer'];
-		                    $message .= '</p>';
-	                    }
-
-                    $message .= '</span>
+                    <span class="notlook">
+                      <p><strong>Location: </strong>' . $subscriber->location . '</p>
+                      <p><strong>Price Range: </strong>$' . $subscriber->price_min . ' - $' . $subscriber->price_max . '</p>
+                      <p><strong># Bedrooms: </strong>' . $subscriber->num_beds . '</p>
+                      <p><strong># Bathrooms: </strong>' . $subscriber->num_baths . '</p>
+                    </span>
 									</td>
 								</tr>
 							</table>
@@ -430,7 +426,7 @@ $message = '<!DOCTYPE html>
 				<table border="0" cellpadding="0" cellspacing="0" id="footerContainer" style="width:100%;margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse ;">
 					<tr>
 						<td style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
-							<hr class="hr" style="clear: both;display: block;height: 0px;border-top: 1px solid #E0E0E0;border-bottom: 0px solid #FFFFFF;">
+							<hr class="hr" style="clear: both;display: block;height: 0;border-top: 1px solid #E0E0E0;border-bottom: 0 solid #FFFFFF;">
 						</td>
 					</tr>
 					<tr>

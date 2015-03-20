@@ -118,7 +118,7 @@ class HouseHunter {
 			'capability_type'     => 'post',
 			'has_archive'         => false,
 			'hierarchical'        => false,
-			'supports'            => [ 'title' ],
+			'supports'            => [ 'title', 'thumbnail' ],
 			'menu_position'       => 5,
 			'menu_icon'           => 'dashicons-admin-crosshair'
 		];
@@ -234,10 +234,15 @@ class HouseHunter {
 	 */
 	public function meta_box_setup()
 	{
-		add_meta_box( $this->token . '-data', __( 'House Hunter Details', $this->token ), [
+		add_meta_box( $this->token . '-data', __( 'Basic Details', $this->token ), [
 			$this,
 			'meta_box_content'
-		], $this->token, 'normal', 'high' );
+		], $this->token, 'normal', 'high', [ 'type' => 'basic' ] );
+
+		add_meta_box( $this->token . '-marketing', __( 'Marketing Details', $this->token ), [
+			$this,
+			'meta_box_content'
+		], $this->token, 'normal', 'high', [ 'type' => 'marketing' ] );
 
 		do_action( $this->token . '_meta_boxes' );
 	}
@@ -246,15 +251,19 @@ class HouseHunter {
 	 * Build the custom fields that will be displayed
 	 * in the meta box for our House Hunter post type.
 	 *
+	 * @param $post
+	 * @param $meta
 	 */
-	public function meta_box_content()
+	public function meta_box_content( $post, $meta )
 	{
 		global $post_id;
 		$fields     = get_post_custom( $post_id );
-		$field_data = $this->get_custom_fields_settings();
+		$field_data = $this->get_custom_fields_settings( $meta['args']['type'] );
 
 		$html = '';
-		$html .= '<input type="hidden" name="' . $this->token . '_nonce" id="' . $this->token . '_nonce" value="' . wp_create_nonce( plugin_basename( $this->dir ) ) . '" />';
+
+		if ( $meta['args']['type'] == 'basic' )
+			$html .= '<input type="hidden" name="' . $this->token . '_nonce" id="' . $this->token . '_nonce" value="' . wp_create_nonce( plugin_basename( $this->dir ) ) . '">';
 
 		if ( 0 < count( $field_data ) ) {
 			$html .= '<table class="form-table">' . "\n";
@@ -318,7 +327,7 @@ class HouseHunter {
 				return $post_id;
 		}
 
-		$field_data = $this->get_custom_fields_settings();
+		$field_data = $this->get_custom_fields_settings( 'all' );
 		$fields     = array_keys( $field_data );
 
 		foreach ( $fields as $f ) {
@@ -378,12 +387,9 @@ class HouseHunter {
 			wp_enqueue_style( 'roboto' );
 			wp_enqueue_style( 'roboto-slab' );
 
-			wp_register_script( 'icheck', esc_url( $this->assets_url . 'js/icheck.js' ), [ 'jquery' ] );
 			wp_register_script( $this->token . '-js', esc_url( $this->assets_url . 'js/scripts.js' ), [
-				'jquery',
-				'icheck'
+				'jquery'
 			] );
-			wp_enqueue_script( 'icheck' );
 			wp_enqueue_script( $this->token . '-js' );
 
 			$localize = [
@@ -399,67 +405,100 @@ class HouseHunter {
 	 * be displayed and used for our
 	 * House Hunter post type.
 	 *
+	 * @param $meta_box
+	 *
 	 * @return mixed
 	 */
-	public function get_custom_fields_settings()
+	public function get_custom_fields_settings( $meta_box )
 	{
 		$fields = [ ];
 
-		$fields['call_to_action'] = [
-			'name'        => __( 'Your Call To Action', $this->token ),
-			'description' => __( 'The call to action for users to give you their contact information.', $this->token ),
-			'placeholder' => __( 'Search', $this->token ),
-			'type'        => 'text',
-			'default'     => 'Search',
-			'section'     => 'info'
-		];
+		if ( $meta_box == 'basic' || $meta_box == 'all' ) {
+			$fields['call_to_action'] = [
+				'name'        => __( 'Your Call To Action', $this->token ),
+				'description' => __( 'The call to action for users to give you their contact information.', $this->token ),
+				'placeholder' => __( 'Search', $this->token ),
+				'type'        => 'text',
+				'default'     => 'Search',
+				'section'     => 'info'
+			];
 
-		$fields['legal_broker'] = [
-			'name'        => __( 'Your Legal Broker', $this->token ),
-			'description' => __( 'This will be displayed on the bottom of the page.', $this->token ),
-			'placeholder' => '',
-			'type'        => 'text',
-			'default'     => '',
-			'section'     => 'info'
-		];
+			$fields['buyer_quiz'] = [
+				'name'        => __( 'Link To Buyer Quiz', $this->token ),
+				'description' => __( 'The last step of the funnel allows you to link the user to your HomeBuyer Quiz. Enter the link for the quiz here.', $this->token ),
+				'placeholder' => '',
+				'type'        => 'text',
+				'default'     => '',
+				'section'     => 'info'
+			];
 
-		// Step before opt-in (after clicking button, before opt-in)
-		$fields['retargeting'] = [
-			'name'        => __( 'Retargeting (optional)', $this->token ),
-			'description' => __( 'Facebook retargeting pixel to allow retargeting of people that view this page. (optional).', $this->token ),
-			'placeholder' => __( 'Ex: 4123423454', 'pf_buyer_quiz' ),
-			'type'        => 'text',
-			'default'     => '',
-			'section'     => 'info'
-		];
+			$fields['legal_broker'] = [
+				'name'        => __( 'Your Legal Broker', $this->token ),
+				'description' => __( 'This will be displayed on the bottom of the page.', $this->token ),
+				'placeholder' => '',
+				'type'        => 'text',
+				'default'     => '',
+				'section'     => 'info'
+			];
 
-		// After opt-in
-		$fields['conversion'] = [
-			'name'        => __( 'Conversion Tracking (optional)', $this->token ),
-			'description' => __( 'Facebook conversion tracking pixel to help track performance of your ad (optional).', $this->token ),
-			'placeholder' => __( 'Ex: 170432123454', $this->token ),
-			'type'        => 'text',
-			'default'     => '',
-			'section'     => 'info'
-		];
+			$fields['name'] = [
+				'name'        => __( 'Your Name', $this->token ),
+				'description' => __( 'Your name for introducing you at the end of the funnel..', $this->token ),
+				'placeholder' => '',
+				'type'        => 'text',
+				'default'     => '',
+				'section'     => 'info'
+			];
 
-		$fields['primary_color'] = [
-			'name'        => __( 'Primary Color', $this->token ),
-			'description' => __( 'Change the primary color of the buyer quiz.', $this->token ),
-			'placeholder' => '',
-			'type'        => 'color',
-			'default'     => '',
-			'section'     => 'info'
-		];
+			$fields['photo'] = [
+				'name'        => __( 'Your Photo', $this->token ),
+				'description' => __( 'A photo of you for the thank you page of the funnel.', $this->token ),
+				'placeholder' => '',
+				'type'        => 'url',
+				'default'     => '',
+				'section'     => 'info'
+			];
 
-		$fields['hover_color'] = [
-			'name'        => __( 'Hover Color', $this->token ),
-			'description' => __( 'Change the button hover color of the buyer quiz.', $this->token ),
-			'placeholder' => '',
-			'type'        => 'color',
-			'default'     => '',
-			'section'     => 'info'
-		];
+			$fields['primary_color'] = [
+				'name'        => __( 'Primary Color', $this->token ),
+				'description' => __( 'Change the primary color of the buyer quiz.', $this->token ),
+				'placeholder' => '',
+				'type'        => 'color',
+				'default'     => '',
+				'section'     => 'info'
+			];
+
+			$fields['hover_color'] = [
+				'name'        => __( 'Hover Color', $this->token ),
+				'description' => __( 'Change the button hover color of the buyer quiz.', $this->token ),
+				'placeholder' => '',
+				'type'        => 'color',
+				'default'     => '',
+				'section'     => 'info'
+			];
+		}
+
+		if ( $meta_box == 'marketing' || $meta_box == 'all' ) {
+			// Step before opt-in (after clicking button, before opt-in)
+			$fields['retargeting'] = [
+				'name'        => __( 'Retargeting (optional)', $this->token ),
+				'description' => __( 'Facebook retargeting pixel to allow retargeting of people that view this page. (optional).', $this->token ),
+				'placeholder' => __( 'Ex: 4123423454', 'pf_buyer_quiz' ),
+				'type'        => 'text',
+				'default'     => '',
+				'section'     => 'info'
+			];
+
+			// After opt-in
+			$fields['conversion'] = [
+				'name'        => __( 'Conversion Tracking (optional)', $this->token ),
+				'description' => __( 'Facebook conversion tracking pixel to help track performance of your ad (optional).', $this->token ),
+				'placeholder' => __( 'Ex: 170432123454', $this->token ),
+				'type'        => 'text',
+				'default'     => '',
+				'section'     => 'info'
+			];
+		}
 
 		return apply_filters( $this->token . '_valuation_fields', $fields );
 	}
@@ -473,7 +512,7 @@ class HouseHunter {
 	{
 		// Single buyer quiz page template
 		if ( is_single() && get_post_type() == $this->token ) {
-			include( $this->template_path . 'single-quiz.php' );
+			include( $this->template_path . 'single-page.php' );
 			exit;
 		}
 	}
