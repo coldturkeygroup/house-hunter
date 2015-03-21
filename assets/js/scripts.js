@@ -89,7 +89,8 @@ $('document').ready(function () {
 
         setTimeout(function () {
           $('#get-results-modal').modal('hide');
-          $('#house-hunter').remove();
+          $('body').removeClass('modal-open');
+          $('#house-hunter,.modal-backdrop').remove();
           $('.results').show();
         }, 1000);
       }
