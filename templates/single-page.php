@@ -186,7 +186,7 @@ if ( $hover_setting && $hover_setting != '' )
 							<?php wp_nonce_field( 'pf_house_hunter_submit_form', 'pf_house_hunter_nonce' ); ?>
 						</div>
 						<div class="modal-footer">
-							<input type="submit" class="btn btn-primary btn-block" id="submit-results" value="Send Me The List">
+							<button type="submit" class="btn btn-primary btn-block" id="submit-results">Send Me The List</button>
 						</div>
 					</div>
 				</div>

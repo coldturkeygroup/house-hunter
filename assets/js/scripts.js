@@ -67,6 +67,9 @@ $('document').ready(function () {
       url: HouseHunter.ajaxurl,
       data: form.serialize(),
       dataType: 'json',
+      beforeSend: function () {
+        $('#submit-results').html('<i class="fa fa-spinner fa-spin"></i> Processing...');
+      },
       async: true,
       success: function (response) {
         var conversion = $('#conversion').val();
