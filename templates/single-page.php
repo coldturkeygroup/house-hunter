@@ -96,7 +96,7 @@ if ( $hover_setting && $hover_setting != '' )
 				<div class="col-sm-5">
 					Hey, it's <?= $name ?>. I will send you an updated list of homes for sale within the next 24 hours. <br>
 					Thanks
-					for using <?= $title ?> tool! <br> <strong>I'll email you a custom link as soon as I've researched the active
+					for using the house hunter tool! <br> <strong>I'll email you a custom link as soon as I've researched the active
 						listings that fit your price range.</strong>
 					<?php if ( $quiz_link != '' ) { ?>
 						<br> Oh, and one more thing. If you're thinking about buying a home this year, take my 14 question <strong>HomeBuyer Quiz</strong> to find out what you'll qualify for.
