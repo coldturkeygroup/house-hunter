@@ -500,7 +500,7 @@ class HouseHunter {
 			];
 		}
 
-		return apply_filters( $this->token . '_valuation_fields', $fields );
+		return apply_filters( $this->token . '_meta_fields', $fields );
 	}
 
 	/**
