@@ -461,7 +461,7 @@ class HouseHunter {
 
 			$fields['primary_color'] = [
 				'name'        => __( 'Primary Color', $this->token ),
-				'description' => __( 'Change the primary color of the buyer quiz.', $this->token ),
+				'description' => __( 'Change the primary color of the house hunter page.', $this->token ),
 				'placeholder' => '',
 				'type'        => 'color',
 				'default'     => '',
@@ -470,7 +470,7 @@ class HouseHunter {
 
 			$fields['hover_color'] = [
 				'name'        => __( 'Hover Color', $this->token ),
-				'description' => __( 'Change the button hover color of the buyer quiz.', $this->token ),
+				'description' => __( 'Change the button hover color of the house hunter page.', $this->token ),
 				'placeholder' => '',
 				'type'        => 'color',
 				'default'     => '',
@@ -483,7 +483,7 @@ class HouseHunter {
 			$fields['retargeting'] = [
 				'name'        => __( 'Retargeting (optional)', $this->token ),
 				'description' => __( 'Facebook retargeting pixel to allow retargeting of people that view this page. (optional).', $this->token ),
-				'placeholder' => __( 'Ex: 4123423454', 'pf_buyer_quiz' ),
+				'placeholder' => __( 'Ex: 4123423454', $this->token ),
 				'type'        => 'text',
 				'default'     => '',
 				'section'     => 'info'
@@ -510,7 +510,7 @@ class HouseHunter {
 	 */
 	public function page_templates()
 	{
-		// Single buyer quiz page template
+		// Single house hunter page template
 		if ( is_single() && get_post_type() == $this->token ) {
 			include( $this->template_path . 'single-page.php' );
 			exit;

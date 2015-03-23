@@ -24,7 +24,7 @@ class HouseHunter_Admin {
 		$this->home_url   = trailingslashit( home_url() );
 		$this->token      = 'pf_house_hunter';
 
-		// Register buyer quiz settings
+		// Register house hunter settings
 		add_action( 'admin_init', [ $this, 'register_settings' ] );
 
 		// Add settings page to menu
@@ -153,7 +153,7 @@ class HouseHunter_Admin {
 	/**
 	 * Create the slug field for the Settings page.
 	 * The slug field allows users to choose which
-	 * subdirectory their buyer quiz pages are nested in.
+	 * subdirectory their house hunter pages are nested in.
 	 *
 	 */
 	public function slug_field()
@@ -203,23 +203,6 @@ class HouseHunter_Admin {
 	}
 
 	/**
-	 * Define the basic Buyer Quiz URL
-	 *
-	 */
-	public function pf_buyer_quiz_url()
-	{
-		$plugin_url = $this->home_url;
-		$slug       = get_option( $this->token . '_slug' );
-
-		if ( $slug && $slug != ''
-			? $plugin_url .= $slug
-			: $plugin_url .= '?post_type=' . $this->token
-		) ;
-
-		echo '<a href="' . esc_url( $plugin_url ) . '" target="_blank">' . $plugin_url . '</a>';
-	}
-
-	/**
 	 * Create the actual HTML structure
 	 * for the Settings page for the plugin
 	 *
@@ -259,7 +242,7 @@ class HouseHunter_Admin {
 		$leads      = $wpdb->get_results( "SELECT DISTINCT * FROM `$table_name` WHERE `blog_id` = '$blog_id' ORDER BY `id` DESC" );
 
 		?>
-		<div class="wrap" id="pf_buyer_quiz_leads">
+		<div class="wrap" id="<?= $this->token; ?>_leads">
 			<h2>House Hunter Leads</h2>
 
 			<?php
