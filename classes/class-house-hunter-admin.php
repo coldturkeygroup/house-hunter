@@ -193,7 +193,7 @@ class HouseHunter_Admin {
 	{
 		$option = get_option( $this->token . '_frontdesk_key' );
 
-		$data = '';
+		$data = get_option( 'pf_frontdesk_key', '' );
 		if ( $option && strlen( $option ) > 0 && $option != '' )
 			$data = $option;
 
