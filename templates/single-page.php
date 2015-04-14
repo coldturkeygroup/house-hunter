@@ -84,7 +84,7 @@ if ( $hover_setting && $hover_setting != '' )
 	</head>
 
 <body <?php body_class(); ?>>
-<div id="content" class="hh-page">
+<div class="hh-page">
 
 	<div class="container-fluid">
 

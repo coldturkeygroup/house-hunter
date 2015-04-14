@@ -3,13 +3,13 @@ Contributors: Aaron Huisinga
 Tags: real estate, platform, house hunter
 Requires at least: 3.5
 Tested up to: 4.1
-Stable tag: 1.0
+Stable tag: 1.1
 
-A form for prospective homebuyers to fill out to request more information from a real estate agent.
+A form for prospective home buyers to fill out to request more information from a real estate agent.
 
 == Description ==
 
-A form for prospective homebuyers to fill out to request more information from a real estate agent.
+A form for prospective home buyers to fill out to request more information from a real estate agent.
 
 The plugin hooks into FrontDesk using the official API to sync the data of the person submitting the form.
 

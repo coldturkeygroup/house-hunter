@@ -2,7 +2,7 @@
 
 ## Introduction
 
-A form for prospective homebuyers to fill out to request more information from a real estate agent.
+A form for prospective home buyers to fill out to request more information from a real estate agent.
 
 The plugin hooks into FrontDesk using the official API to sync the data of the person submitting the form.
 

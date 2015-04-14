@@ -1,4 +1,4 @@
-$('document').ready(function () {
+jQuery('document').ready(function ($) {
   // Simple AJAX listeners
   $(document).bind("ajaxSend", function () {
     $('.btn-primary').attr('disabled', 'disabled');

@@ -39,7 +39,7 @@ class HouseHunter {
 
 		// Use built-in templates for landing pages
 		add_action( 'template_redirect', [ $this, 'page_templates' ], 20 );
-		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
+		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ], 900 );
 
 		// Handle form submissions
 		add_action( 'wp_ajax_' . $this->token . '_submit_form', [ $this, 'process_submission' ] );
@@ -378,7 +378,7 @@ class HouseHunter {
 	public function enqueue_scripts()
 	{
 		if ( is_singular( $this->token ) ) {
-			wp_register_style( $this->token, esc_url( $this->assets_url . 'css/style.css' ), [ ] );
+			wp_register_style( $this->token, esc_url( $this->assets_url . 'css/househunter.css' ), [ ], HOUSE_HUNTER_PLUGIN_VERSION );
 			wp_register_style( 'animate', esc_url( $this->assets_url . 'css/animate.css' ), [ ] );
 			wp_register_style( 'roboto', 'http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300' );
 			wp_register_style( 'robo-slab', 'http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100' );
@@ -389,7 +389,7 @@ class HouseHunter {
 
 			wp_register_script( $this->token . '-js', esc_url( $this->assets_url . 'js/scripts.js' ), [
 				'jquery'
-			] );
+			], HOUSE_HUNTER_PLUGIN_VERSION );
 			wp_enqueue_script( $this->token . '-js' );
 
 			$localize = [
