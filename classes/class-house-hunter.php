@@ -283,6 +283,26 @@ class HouseHunter {
 					$html .= '<input style="width:100%" name="' . esc_attr( $k ) . '" id="' . esc_attr( $k ) . '" placeholder="' . esc_attr( $placeholder ) . '" type="text" value="' . esc_attr( $data ) . '" />';
 					$html .= '<p class="description">' . $v['description'] . '</p>' . "\n";
 					$html .= '</td><tr/>' . "\n";
+				} elseif ( $type == 'posts' ) {
+					$html .= '<tr valign="top"><th scope="row"><label for="' . esc_attr( $k ) . '">' . $v['name'] . '</label></th><td>';
+					$html .= '<select style="width:100%" name="' . esc_attr( $k ) . '" id="' . esc_attr( $k ) . '">';
+					$html .= '<option value="">Select a Page to Use</option>';
+
+					// Query posts
+					global $post;
+					$args         = [
+						'posts_per_page' => 20,
+						'post_type'      => $v['default'],
+						'post_status'    => 'publish'
+					];
+					$custom_posts = get_posts( $args );
+					foreach ( $custom_posts as $post ) : setup_postdata( $post );
+						$html .= '<option value="' . str_replace( home_url(), '', get_permalink() ) . '">' . get_the_title() . '</option>';
+					endforeach;
+					wp_reset_postdata();
+
+					$html .= '</select><p class="description">' . $v['description'] . '</p>' . "\n";
+					$html .= '</td><tr/>' . "\n";
 				} elseif ( $type == 'url' ) {
 					$html .= '<tr valign="top"><th scope="row"><label for="' . esc_attr( $k ) . '">' . $v['name'] . '</label></th><td><input type="button" class="button" id="upload_media_file_button" value="' . __( 'Upload Image', $this->token ) . '" data-uploader_title="Choose an image" data-uploader_button_text="Insert image file" /><input name="' . esc_attr( $k ) . '" type="text" id="upload_media_file" class="regular-text" value="' . esc_attr( $data ) . '" />' . "\n";
 					$html .= '<p class="description">' . $v['description'] . '</p>' . "\n";
@@ -427,8 +447,8 @@ class HouseHunter {
 				'name'        => __( 'Link To Buyer Quiz', $this->token ),
 				'description' => __( 'The last step of the funnel allows you to link the user to your HomeBuyer Quiz. Enter the link for the quiz here.', $this->token ),
 				'placeholder' => '',
-				'type'        => 'text',
-				'default'     => '',
+				'type'        => 'posts',
+				'default'     => 'pf_buyer_quiz',
 				'section'     => 'info'
 			];
 
