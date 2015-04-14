@@ -1,5 +1,4 @@
-<?php
-$message = '<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -66,7 +65,7 @@ $message = '<!DOCTYPE html>
 		h1,
 		h1 a {
 			color: #3A3A3A !important;
-			font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;
+			font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 			font-size: 40px;
 			font-weight: bold;
 			line-height: 1.2;
@@ -81,7 +80,7 @@ $message = '<!DOCTYPE html>
 		h2,
 		h2 a {
 			color: #3A3A3A !important;
-			font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;
+			font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 			font-size: 26px;
 			font-weight: bold;
 			line-height: 138%;
@@ -95,7 +94,7 @@ $message = '<!DOCTYPE html>
 		h3,
 		h3 a {
 			color: #3A3A3A !important;
-			font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;
+			font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 			font-size: 18px;
 			font-weight: bold;
 			line-height: 115%;
@@ -134,9 +133,9 @@ $message = '<!DOCTYPE html>
 		.hr {
 			clear: both;
 			display: block;
-			height: 0px;
+			height: 0;
 			border-top: 1px solid #E0E0E0;
-			border-bottom: 0px solid #FFFFFF;
+			border-bottom: 0 solid #FFFFFF;
 		}
 
 		.preheader {
@@ -155,14 +154,14 @@ $message = '<!DOCTYPE html>
 
 		@media screen {
 			.bodyContent {
-				font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif;
+				font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 			}
 
 		}
 
 		@media screen {
 			.notlook {
-				font-family: \'Helvetica Neue\', Helvetica, Arial, sans-serif !important;
+				font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 			}
 
 		}
@@ -199,7 +198,7 @@ $message = '<!DOCTYPE html>
 			body {
 				width: 100% !important;
 				min-width: 100% !important;
-				font-family: \'Open Sans\', Verdana, Arial, Helvetica, sans-serif;
+				font-family: 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
 			}
 
 		}
@@ -343,8 +342,8 @@ $message = '<!DOCTYPE html>
 			<td align="center" valign="top" id="logoCell" style="padding: 0;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
 				<table border="0" cellpadding="0" cellspacing="0" id="emailLogo" style="width:600px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse ;">
 					<tr>
-						<td align="center" valign="top" style="padding-top: 40px;padding-right: 20px;padding-bottom: 30px;padding-left: 40px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
-							<a href="http://platform.marketing/" target="_blank" title="Platform" style="text-decoration: none;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;"><img src="https://s3.amazonaws.com/cdn.platform.marketing/assets/logo-dark.png" alt="Platform Logo" height="40" width="250" border="0" class="logoImage" style="border: 0;padding: 0;color: #459CE7 !important;font-family: \'Open Sans\', Verdana, Arial, Helvetica, sans-serif;font-size: 16px;font-weight: bold;height: auto !important;line-height: 100%;outline: none;text-align: center;text-decoration: none;display: block !important;-ms-interpolation-mode: bicubic;"></a>
+						<td align="center" valign="top" style="padding: 40px 20px 30px 40px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+							<a href="http://platform.marketing/" target="_blank" title="Platform" style="text-decoration: none;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;"><img src="https://s3.amazonaws.com/cdn.platform.marketing/assets/logo-dark.png" alt="Platform Logo" height="40" width="250" border="0" class="logoImage" style="border: 0;padding: 0;color: #459CE7 !important;font-family: 'Open Sans', Verdana, Arial, Helvetica, sans-serif;font-size: 16px;font-weight: bold;height: auto !important;line-height: 100%;outline: none;text-align: center;text-decoration: none;display: block !important;-ms-interpolation-mode: bicubic;"></a>
 						</td>
 					</tr>
 				</table>
@@ -357,8 +356,8 @@ $message = '<!DOCTYPE html>
 						<td align="center" valign="top" class="headerPad" style="padding: 0;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
 							<table border="0" cellpadding="0" cellspacing="0" width="600" id="headerContent" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse ;">
 								<tr>
-									<td align="center" valign="top" style="padding-top: 0px;padding-bottom: 0px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
-										<h2 style="text-align:center;font-family:\'Helvetica Neue\',Helvetica, Arial, sans-serif;font-size:26px;font-weight:bold;line-height:138%;margin:0;padding:0;-webkit-font-smoothing:antialiased;color:#3A3A3A ;text-decoration:none ;">
+									<td align="center" valign="top" style="padding-top: 0;padding-bottom: 0;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+										<h2 style="text-align:center;font-family:'Helvetica Neue',Helvetica, Arial, sans-serif;font-size:26px;font-weight:bold;line-height:138%;margin:0;padding:0;-webkit-font-smoothing:antialiased;color:#3A3A3A ;text-decoration:none ;">
 											New House Hunter Submission
 										</h2>
 									</td>
@@ -376,51 +375,52 @@ $message = '<!DOCTYPE html>
 						<td align="center" valign="top" style="padding-top: 00px;padding-bottom: 00px;text-align: left;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
 							<table border="0" cellpadding="0" cellspacing="0" width="100%" id="emailBody" style="background-color:#FFFFFF;border-collapse:collapse ;border-radius:4px;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
 								<tr>
-									<td align="center" valign="top" class="bodyContent" style="padding-top: 44px;padding-right: 30px;padding-bottom: 0px;padding-left: 30px;font-family: Verdana, Arial, Helvetica, sans-serif;text-align: left;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #3A3A3A;font-size: 16px;font-weight: normal;line-height: 169%;-webkit-font-smoothing: antialiased;">
+									<td align="center" valign="top" class="bodyContent" style="padding: 44px 30px 0;font-family: Verdana, Arial, Helvetica, sans-serif;text-align: left;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #3A3A3A;font-size: 16px;font-weight: normal;line-height: 169%;-webkit-font-smoothing: antialiased;">
     <span class="notlook">
-    <h3 style="font-family:\'Helvetica Neue\',Helvetica, Arial, sans-serif;font-size:18px;font-weight:bold;line-height:115%;margin:0;padding:0;text-align:left;-webkit-font-smoothing:antialiased;color:#3A3A3A ;text-decoration:none ;">
+    <h3 style="font-family:'Helvetica Neue',Helvetica, Arial, sans-serif;font-size:18px;font-weight:bold;line-height:115%;margin:0;padding:0;text-align:left;-webkit-font-smoothing:antialiased;color:#3A3A3A ;text-decoration:none ;">
 	    Prospect Contact Information</h3></span>
 									</td>
 								</tr>
 								<tr>
-									<td align="center" valign="top" class="bodyContent" style="padding-top: 10px;padding-right: 30px;padding-bottom: 0px;padding-left: 30px;font-family: Verdana, Arial, Helvetica, sans-serif;text-align: left;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #3A3A3A;font-size: 16px;font-weight: normal;line-height: 169%;-webkit-font-smoothing: antialiased;">
+									<td align="center" valign="top" class="bodyContent" style="padding: 10px 30px 0;font-family: Verdana, Arial, Helvetica, sans-serif;text-align: left;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #3A3A3A;font-size: 16px;font-weight: normal;line-height: 169%;-webkit-font-smoothing: antialiased;">
                     <span class="notlook"><p>
-		                    <strong>Name:</strong> '. $subscriber->first_name . '<br>
-		                    <strong>Email:</strong> ' . $subscriber->email . '
+		                    <strong>Name: </strong><?= $subscriber->first_name ?><br>
+		                    <strong>Email: </strong><?= $subscriber->email ?>
 	                    </p></span>
 									</td>
 								</tr>
 								<tr>
-									<td align="center" valign="top" class="bodyContent" style="padding-top: 44px;padding-right: 30px;padding-bottom: 0px;padding-left: 30px;font-family: Verdana, Arial, Helvetica, sans-serif;text-align: left;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #3A3A3A;font-size: 16px;font-weight: normal;line-height: 169%;-webkit-font-smoothing: antialiased;">
+									<td align="center" valign="top" class="bodyContent" style="padding: 44px 30px 0;font-family: Verdana, Arial, Helvetica, sans-serif;text-align: left;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #3A3A3A;font-size: 16px;font-weight: normal;line-height: 169%;-webkit-font-smoothing: antialiased;">
     <span class="notlook">
-    <h3 style="font-family:\'Helvetica Neue\',Helvetica, Arial, sans-serif;font-size:18px;font-weight:bold;line-height:115%;margin:0;padding:0;text-align:left;-webkit-font-smoothing:antialiased;color:#3A3A3A ;text-decoration:none ;">
+    <h3 style="font-family:'Helvetica Neue',Helvetica, Arial, sans-serif;font-size:18px;font-weight:bold;line-height:115%;margin:0;padding:0;text-align:left;-webkit-font-smoothing:antialiased;color:#3A3A3A ;text-decoration:none ;">
 	    Prospect Quiz Results</h3></span>
 									</td>
 								</tr>
 								<tr>
-									<td align="center" valign="top" class="bodyContent" style="padding-top: 10px;padding-right: 30px;padding-bottom: 0px;padding-left: 30px;font-family: Verdana, Arial, Helvetica, sans-serif;text-align: left;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #3A3A3A;font-size: 16px;font-weight: normal;line-height: 169%;-webkit-font-smoothing: antialiased;">
+									<td align="center" valign="top" class="bodyContent" style="padding: 10px 30px 0;font-family: Verdana, Arial, Helvetica, sans-serif;text-align: left;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #3A3A3A;font-size: 16px;font-weight: normal;line-height: 169%;-webkit-font-smoothing: antialiased;">
                     <span class="notlook">
                       <p>
-                        <strong>Location: </strong>' . $subscriber->location . '<br>
-                        <strong>Price Range: </strong>$' . $subscriber->price_min . ' - $' . $subscriber->price_max . '<br>
-                        <strong># Bedrooms: </strong>' . $subscriber->num_beds . '<br>
-                        <strong># Bathrooms: </strong>' . $subscriber->num_baths . '
+	                      <strong>Location: </strong><?= $subscriber->location ?><br>
+	                      <strong>Price Range: </strong>$<?= number_format( $subscriber->price_min ) ?> -
+	                      $<?= number_format( $subscriber->price_max ) ?><br>
+	                      <strong># Bedrooms: </strong><?= $subscriber->num_beds ?><br>
+	                      <strong># Bathrooms: </strong><?= $subscriber->num_baths ?>
                       </p>
                     </span>
 									</td>
 								</tr>
 							</table>
 						</td>
-					</tr>';
-
-					if($subscriber->frontdesk_id != null) {
-						$message .= '<tr>
-            <td align="center" valign="middle" class="emailButtonContent" style="color: #FFFFFF;font-family: \'Helvetica Neue\',Arial,Helvetica,sans-serif;font-size: 16px;line-height: 1.6875;text-align: center;letter-spacing: 0.04em;padding-top: 10px;padding-right: 22px;padding-bottom: 10px;padding-left: 22px;-webkit-font-smoothing: antialiased;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
-              <a href="https://tryfrontdesk.com/subscribers/' . $subscriber->frontdesk_id . '" target="_blank" style="color: #FFFFFF;text-decoration: none;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;">View Prospect on FrontDesk</a>
-            </td>
-          </tr>';
-					}
-				$message .= '</table>
+					</tr>
+					<?php if ( $subscriber->frontdesk_id != null ) { ?>
+						<tr>
+							<td align="center" valign="middle" class="emailButtonContent" style="color: #FFFFFF;font-family: 'Helvetica Neue',Arial,Helvetica,sans-serif;font-size: 16px;line-height: 1.6875;text-align: center;letter-spacing: 0.04em;padding: 10px 22px;-webkit-font-smoothing: antialiased;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+								<a href="https://tryfrontdesk.com/subscribers/' . $subscriber->frontdesk_id . '" target="_blank" style="color: #FFFFFF;text-decoration: none;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;">View
+									Prospect on FrontDesk</a>
+							</td>
+						</tr>
+					<?php } ?>
+				</table>
 			</td>
 		</tr>
 		<tr style="margin:0; padding:0;" id="footerRow">
@@ -432,11 +432,11 @@ $message = '<!DOCTYPE html>
 						</td>
 					</tr>
 					<tr>
-						<td align="center" valign="top" style="padding-top: 30px;padding-right: 0;padding-bottom: 0;padding-left: 0;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+						<td align="center" valign="top" style="padding: 30px 0 0;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
 							<table border="0" cellpadding="0" cellspacing="0" width="560" id="footerContent" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse ;">
 								<tr>
 									<td align="center" valign="top" class="footerInfo" style="color: #333333;font-family: Verdana, Arial, Helvetica, sans-serif;font-size: 12px;line-height: 175%;text-align: center;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
-										<span class="notlook">&copy; 2014-'. date( 'Y' ) . ' Platform, All Rights Reserved.</span>
+										<span class="notlook">&copy; 2014-<?= date( 'Y' ) ?> Platform, All Rights Reserved.</span>
 									</td>
 								</tr>
 								<tr>
@@ -474,4 +474,4 @@ $message = '<!DOCTYPE html>
 	</table>
 </center>
 </body>
-</html>';
+</html>

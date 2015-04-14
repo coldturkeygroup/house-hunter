@@ -606,7 +606,11 @@ class HouseHunter {
 		$headers[]   = 'From: Platform <info@platform.marketing>';
 		$headers[]   = 'Content-Type: text/html; charset=UTF-8';
 		$subject     = 'New House Hunter Submission';
-		include( $this->template_path . 'single-email.php' );
+		// Load template into message
+		ob_start();
+		include $this->template_path . 'single-email.php';
+		$message = ob_get_contents();
+		ob_end_clean();
 
 		wp_mail( $admin_email, $subject, $message, $headers );
 	}
@@ -627,15 +631,15 @@ class HouseHunter {
 			$email      = sanitize_text_field( $_POST['email'] );
 			$source     = sanitize_text_field( $_POST['permalink'] );
 			$location   = sanitize_text_field( $_POST['location'] );
-			$price_min  = sanitize_text_field( $_POST['price_min'] );
-			$price_max  = sanitize_text_field( $_POST['price_max'] );
+			$price_min  = str_replace( ',', '', sanitize_text_field( $_POST['price_min'] ) );
+			$price_max  = str_replace( ',', '', sanitize_text_field( $_POST['price_max'] ) );
 			$num_beds   = sanitize_text_field( $_POST['num_beds'] );
 			$num_baths  = sanitize_text_field( $_POST['num_baths'] );
 
 			$wpdb->query( $wpdb->prepare(
 				'INSERT INTO ' . $this->table_name . '
 				 ( blog_id, first_name, email, location, price_min, price_max, num_beds, num_baths, created_at )
-				 VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, NOW() )',
+				 VALUES ( %d, %s, %s, %s, %s, %s, %s, %s, NOW() )',
 				[
 					$blog_id,
 					$first_name,
@@ -660,7 +664,7 @@ class HouseHunter {
 			if ( $frontdesk_id != null ) {
 				$wpdb->query( $wpdb->prepare(
 					'UPDATE ' . $this->table_name . '
-					 SET frontdesk_id = %s
+					 SET frontdesk_id = %d
 					 WHERE id = \'' . $user_id . '\'',
 					[
 						$frontdesk_id
