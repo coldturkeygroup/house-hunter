@@ -52,6 +52,7 @@ class FrontDesk {
 						'key'         => $this->api_key,
 						'title'       => $title,
 						'description' => 'Campaign for Platform House Hunter',
+						'type'        => 'Platform',
 						'total_cost'  => '10000',
 						'source'      => $permalink
 					]
