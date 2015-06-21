@@ -1,7 +1,7 @@
 <?php namespace ColdTurkey\HouseHunter;
 /*
  * Plugin Name: House Hunter
- * Version: 1.3
+ * Version: 1.4
  * Plugin URI: http://www.coldturkeygroup.com/
  * Description: A form for prospective home buyers to fill out to request more information from a real estate agent.
  * Author: Cold Turkey Group
@@ -20,7 +20,7 @@ if ( ! defined( 'HOUSE_HUNTER_PLUGIN_PATH' ) )
 	define( 'HOUSE_HUNTER_PLUGIN_PATH', trailingslashit( plugin_dir_path( __FILE__ ) ) );
 
 if ( ! defined( 'HOUSE_HUNTER_PLUGIN_VERSION' ) )
-	define( 'HOUSE_HUNTER_PLUGIN_VERSION', '1.3' );
+	define( 'HOUSE_HUNTER_PLUGIN_VERSION', '1.4' );
 
 require_once( 'classes/class-house-hunter.php' );
 
