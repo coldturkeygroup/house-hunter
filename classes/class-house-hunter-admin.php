@@ -215,7 +215,7 @@ class HouseHunter_Admin {
 		}
 
 		echo '<div class="wrap" id="' . $this->token . '_settings">
-					<h2>' . __( 'House Hunter Settings', $this->token ) . '</h2>
+					<h1>' . __( 'House Hunter Settings', $this->token ) . '</h1>
 					<form method="post" action="options.php" enctype="multipart/form-data">
 						<div class="clear"></div>';
 
@@ -243,7 +243,7 @@ class HouseHunter_Admin {
 
 		?>
 		<div class="wrap" id="<?= $this->token; ?>_leads">
-			<h2>House Hunter Leads</h2>
+			<h1>House Hunter Leads</h1>
 
 			<?php
 			if ( isset( $_GET['deleted'] ) && $_GET['deleted'] == true )
