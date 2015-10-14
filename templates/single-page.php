@@ -184,6 +184,7 @@ if ( $hover_setting && $hover_setting != '' )
 							<input name="permalink" type="hidden" value="<?= $permalink; ?>">
 							<input name="action" type="hidden" id="pf_house_hunter_submit_form" value="pf_house_hunter_submit_form">
 							<?php wp_nonce_field( 'pf_house_hunter_submit_form', 'pf_house_hunter_nonce' ); ?>
+							<input name="page_id" type="hidden" value="<?= $id ?>">
 						</div>
 						<div class="modal-footer">
 							<button type="submit" class="btn btn-primary btn-block" id="submit-results">Send Me The List</button>
