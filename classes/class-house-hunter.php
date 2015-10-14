@@ -489,7 +489,7 @@ class HouseHunter
                 'section' => 'info'
             ];
 
-            $field['email'] = [
+            $fields['email'] = [
                 'name' => __('Notification Email', $this->token),
                 'description' => __('This address will be emailed when a user opts-into your ad. If left empty, emails will be sent to the default address for your site.', $this->token),
                 'placeholder' => '',
