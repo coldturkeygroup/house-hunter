@@ -3,7 +3,7 @@ Contributors: Aaron Huisinga
 Tags: real estate, platform, house hunter
 Requires at least: 3.5
 Tested up to: 4.3
-Stable tag: 1.5.2
+Stable tag: 1.5.3
 
 A form for prospective home buyers to fill out to request more information from a real estate agent.
 
