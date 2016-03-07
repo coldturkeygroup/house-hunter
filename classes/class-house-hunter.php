@@ -417,13 +417,14 @@ class HouseHunter
                 'jquery'
             ], HOUSE_HUNTER_PLUGIN_VERSION);
             wp_enqueue_script($this->token . '-js');
-            wp_register_script('mailcheck', esc_url($this->assets_url . 'js/mailcheck.min.js'), [
+            wp_register_script('mailgun-validator', esc_url($this->assets_url . 'js/mailgun-validator.js'), [
                 'jquery'
             ], HOUSE_HUNTER_PLUGIN_VERSION);
-            wp_enqueue_script('mailcheck');
+            wp_enqueue_script('mailgun-validator');
 
             $localize = [
-                'ajaxurl' => admin_url('admin-ajax.php')
+                'ajaxurl' => admin_url('admin-ajax.php'),
+                'mailgun' => defined('MAILGUN_PUBLIC') ? MAILGUN_PUBLIC : ''
             ];
             wp_localize_script($this->token . '-js', 'HouseHunter', $localize);
         }
