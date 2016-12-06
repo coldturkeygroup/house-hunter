@@ -5,7 +5,7 @@ namespace ColdTurkey\HouseHunter;
 if (!defined('ABSPATH')) exit; // Exit if accessed directly.
 
 // Composer autoloader
-require_once HOUSE_HUNTER_PLUGIN_PATH . '../vendor/autoload.php';
+require_once HOUSE_HUNTER_PLUGIN_PATH . 'vendor/autoload.php';
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
