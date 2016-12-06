@@ -1,4 +1,6 @@
-<?php namespace ColdTurkey\HouseHunter;
+<?php
+
+namespace ColdTurkey\HouseHunter;
 
 if (!defined('ABSPATH')) exit; // Exit if accessed directly.
 
