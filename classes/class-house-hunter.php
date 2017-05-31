@@ -382,8 +382,8 @@ class HouseHunter
         if (is_singular($this->token)) {
             wp_register_style($this->token, esc_url($this->assets_url . 'css/househunter.css'), [], HOUSE_HUNTER_PLUGIN_VERSION);
             wp_register_style('animate', esc_url($this->assets_url . 'css/animate.css'), []);
-            wp_register_style('roboto', 'http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300');
-            wp_register_style('robo-slab', 'http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100');
+            wp_register_style('roboto', 'https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300');
+            wp_register_style('robo-slab', 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100');
             wp_enqueue_style($this->token);
             wp_enqueue_style('animate');
             wp_enqueue_style('roboto');
