@@ -7,9 +7,9 @@ jQuery('document').ready(function ($) {
     });
 
     // Email Validation
-    if (HouseHunter.mailgun !== undefined && HouseHunter.mailgun !== '') {
-        $('#email').mailgun_validator({
-            api_key: HouseHunter.mailgun,
+    if (HouseHunter.platformvaluator !== undefined && HouseHunter.platformvaluator !== '') {
+        $('#email').platform_email_validator({
+            api_key: HouseHunter.platformvaluator,
             in_progress: function () {
                 $('#email').parent().removeClass('has-warning has-error');
                 $(".mailcheck-suggestion").remove();
@@ -48,7 +48,7 @@ jQuery('document').ready(function ($) {
 
     $(".form-group").on("click", ".mailcheck-suggestion a", function (e) {
         e.preventDefault();
-        $("#email").val($(this).text());
+        $("#email").val($(this).text()).parent().removeClass('has-warning has-error');
         $("[type=submit]").removeClass("disabled").removeAttr("disabled");
         $(".mailcheck-suggestion").remove();
     });
