@@ -1,7 +1,8 @@
 <?php namespace ColdTurkey\HouseHunter;
+
 /*
  * Plugin Name: House Hunter
- * Version: 1.8.5
+ * Version: 1.8.6
  * Plugin URI: http://www.coldturkeygroup.com/
  * Description: A form for prospective home buyers to fill out to request more information from a real estate agent.
  * Author: Cold Turkey Group
@@ -14,20 +15,24 @@
  * @since 1.0.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit;
+if (!defined('ABSPATH')) {
+    exit;
+}
 
-if ( ! defined( 'HOUSE_HUNTER_PLUGIN_PATH' ) )
-	define( 'HOUSE_HUNTER_PLUGIN_PATH', trailingslashit( plugin_dir_path( __FILE__ ) ) );
+if (!defined('HOUSE_HUNTER_PLUGIN_PATH')) {
+    define('HOUSE_HUNTER_PLUGIN_PATH', trailingslashit(plugin_dir_path(__FILE__)));
+}
 
-if ( ! defined( 'HOUSE_HUNTER_PLUGIN_VERSION' ) )
-	define( 'HOUSE_HUNTER_PLUGIN_VERSION', '1.8.5' );
+if (!defined('HOUSE_HUNTER_PLUGIN_VERSION')) {
+    define('HOUSE_HUNTER_PLUGIN_VERSION', '1.8.6');
+}
 
-require_once( 'classes/class-house-hunter.php' );
+require_once('classes/class-house-hunter.php');
 
 global $house_hunter;
-$house_hunter = new HouseHunter( __FILE__, new FrontDesk() );
+$house_hunter = new HouseHunter(__FILE__, new FrontDesk());
 
-if ( is_admin() ) {
-	require_once( 'classes/class-house-hunter-admin.php' );
-	new HouseHunter_Admin( __FILE__ );
+if (is_admin()) {
+    require_once('classes/class-house-hunter-admin.php');
+    new HouseHunter_Admin(__FILE__);
 }
