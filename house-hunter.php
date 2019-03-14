@@ -2,13 +2,13 @@
 
 /*
  * Plugin Name: House Hunter
- * Version: 1.8.6
+ * Version: 1.8.7
  * Plugin URI: http://www.coldturkeygroup.com/
  * Description: A form for prospective home buyers to fill out to request more information from a real estate agent.
  * Author: Cold Turkey Group
  * Author URI: http://www.coldturkeygroup.com/
  * Requires at least: 4.0
- * Tested up to: 4.3
+ * Tested up to: 5.1
  *
  * @package House Hunter
  * @author Aaron Huisinga
@@ -24,7 +24,7 @@ if (!defined('HOUSE_HUNTER_PLUGIN_PATH')) {
 }
 
 if (!defined('HOUSE_HUNTER_PLUGIN_VERSION')) {
-    define('HOUSE_HUNTER_PLUGIN_VERSION', '1.8.6');
+    define('HOUSE_HUNTER_PLUGIN_VERSION', '1.8.7');
 }
 
 require_once('classes/class-house-hunter.php');
